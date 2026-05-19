@@ -29,7 +29,12 @@ Dataset menggunakan Sample Superstore Dataset.
 
 ## Analisis yang Dilakukan
 
-### 1. Statistik Deskriptif
+ Statistik Deskriptif
 Analisis dilakukan menggunakan fungsi:
 ```python
 df[['Sales','Profit']].describe()
+
+df.groupby("Category")[["Sales","Profit"]].agg(["mean","sum","count"])
+
+sns.boxplot(x=df["Sales"])
+
